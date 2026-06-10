@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti, mi pequeña 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(251, 111, 146, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: #ff477e;
+            animation: beat 1.2s infinite;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.8rem;
+            color: #ff477e;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #6c757d;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: #ff7096;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 112, 150, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #ff477e;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Mensajes ocultos que aparecen al hacer clic */
+        .secret-message {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #ffc2d1;
+            display: none;
+            animation: slideDown 0.5s ease forwards;
+        }
+
+        .nickname-badge {
+            display: inline-block;
+            background: #fff0f3;
+            color: #ff477e;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .love-text {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        /* Animaciones */
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="heart">💖</div>
+        <h1>¡Hola, bonita!</h1>
+        <p>Hoy me dio por pensar en lo increíble que eres y no quise quedarme con las ganas de recordártelo de una forma diferente.</p>
+        
+        <button class="btn" onclick="mostrarMensaje()">Tengo un secreto...</button>
+
+        <div class="secret-message" id="mensajeOculto">
+            <div>
+                <span class="nickname-badge">Mi conejita 🐰</span>
+                <span class="nickname-badge">Mi bunny 🤍</span>
+                <span class="nickname-badge">Mi pequeña ✨</span>
+            </div>
+            <p class="love-text">
+                "Solo quería decirte, de manera totalmente espontánea, que me encantas en todas tus versiones y que tenerte en mi vida es lo mejor de todos mis días. Te amo muchísimo."
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            const mensaje = document.getElementById('mensajeOculto');
+            const boton = document.querySelector('.btn');
+            
+            if (mensaje.style.display === 'block') {
+                mensaje.style.display = 'none';
+                boton.textContent = 'Tengo un secreto...';
+            } else {
+                mensaje.style.display = 'block';
+                boton.textContent = 'Cerrar detalle 🌸';
+            }
+        }
+    </script>
+
+</body>
+</html>
